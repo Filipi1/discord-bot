@@ -9,6 +9,7 @@ const commands = commandsReader(config.prefix);
 
 client.on("ready", () => {
     console.log(`Bot foi iniciado, com ${client.user.tag} usuários`)
+    client.user.setAFK()
 });
 
 client.on("message", async (message) => {
@@ -19,8 +20,15 @@ client.on("message", async (message) => {
             var command = args[0] + " " + args[1]
             if(commands[command])
                 commands[command](client, message);
-            else
-                message.reply(`Não existe nenhum comando "${command}". \nDigite "p! help" ver os comandos disponíveis.`)
+            else {
+                const embed = new Discord.MessageEmbed()
+                .setTitle("❌  Oops!")
+                .setDescription(`Não existe nenhum comando "${command}". \n\nDigite "p! help" para ver os comandos disponíveis.`)
+                .setColor(0xE34545)
+        
+                message.reply(embed);    
+            }
+                
         }
     }
 });

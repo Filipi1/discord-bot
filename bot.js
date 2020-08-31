@@ -9,11 +9,12 @@ const commands = commandsReader(config.prefix);
 
 client.on("ready", () => {
     console.log(`Bot foi iniciado, com ${client.user.tag} usuários`)
-    client.user.setAFK()
+    client.user.setActivity("p! help")
 });
 
 client.on("message", async (message) => {
     if (!message.author.bot) {
+
         const args = message.content.split(" ");
 
         if (args[0] == config.prefix) {

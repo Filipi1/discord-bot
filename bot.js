@@ -9,7 +9,7 @@ const commands = commandsReader(config.prefix);
 
 client.on("ready", () => {
     console.log(`Bot foi iniciado, com ${client.user.tag} usuários`)
-    client.user.setActivity("p! help")
+    client.user.setActivity("s! help")
 });
 
 client.on("message", async (message) => {
@@ -18,12 +18,12 @@ client.on("message", async (message) => {
 
         if (args[0] == config.prefix) {
             var command = args[0] + " " + args[1]
-            if(commands[command])
-                commands[command](client, message);
+            if(commands[command.toLowerCase()])
+                commands[command.toLowerCase()](client, message);
             else {
                 const embed = new Discord.MessageEmbed()
                 .setTitle("❌  Oops!")
-                .setDescription(`Não existe nenhum comando "${command}". \n\nDigite "p! help" para ver os comandos disponíveis.`)
+                .setDescription(`Não existe nenhum comando "${command}". \n\nDigite "s! help" para ver os comandos disponíveis.`)
                 .setColor(0xE34545)
         
                 message.reply(embed);    

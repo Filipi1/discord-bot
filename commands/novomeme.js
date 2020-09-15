@@ -33,7 +33,7 @@ module.exports = (client, msg) => {
 
     collector.on('end', collector => {
         if(collector.size == 0) {
-            msg.channel.send("```Tempo expirado, por favor, recomeçe com 'p! novomeme'```")
+            msg.channel.send("```Tempo expirado, por favor, recomeçe com 's! novomeme'```")
         }
     })
 
@@ -49,7 +49,7 @@ module.exports = (client, msg) => {
             })
             urlCollector.on('end', collector => {
                 if(collector.size == 0) {
-                    msg.channel.send("```Tempo expirado, por favor, recomeçe com 'p! novomeme'```")
+                    msg.channel.send("```Tempo expirado, por favor, recomeçe com 's! novomeme'```")
                 }
             })
         }
@@ -79,7 +79,7 @@ module.exports = (client, msg) => {
             })
             descCollector.on('end', collector => {
                 if(collector.size == 0) {
-                    msg.channel.send("Tempo expirado, por favor, recomeçe com 'p! novomeme'")
+                    msg.channel.send("Tempo expirado, por favor, recomeçe com 's! novomeme'")
                 }
             })
         }
@@ -106,7 +106,7 @@ module.exports = (client, msg) => {
             })
             confirm.on('end', collector => {
                 if(collector.size == 0) {
-                    msg.channel.send("Tempo expirado, por favor, recomeçe com 'p! novomeme'")
+                    msg.channel.send("Tempo expirado, por favor, recomeçe com 's! novomeme'")
                 }
             })
         }

@@ -3,11 +3,12 @@ const commands = require("../scripts/commandsReader")(config.prefix);
 const Discord = require('discord.js');
 
 const descriptions = {
-    "p! ping": "Testa a velocidade de resposta do bot",
-    "p! help": "Visualiza todos os comandos",
-    "p! clean": "Faz uma limpeza no chat",
-    "p! eusou": "Mostra quem você é",
-    "p! novomeme": "Crie seu proprio meme para os comandos 'eusou'."
+    "s! ping": "Testa a velocidade de resposta do bot",
+    "s! help": "Visualiza todos os comandos",
+    "s! clean": "Faz uma limpeza no chat",
+    "s! eusou": "Mostra quem você é",
+    "s! novomeme": "Crie seu proprio meme para os comandos 'eusou'.",
+    "s! meunumero": "Te ajuda a escolher um número"
 }
 
 module.exports = async (client, msg) => {

@@ -14,7 +14,6 @@ client.on("ready", () => {
 
 client.on("message", async (message) => {
     if (!message.author.bot) {
-
         const args = message.content.split(" ");
 
         if (args[0] == config.prefix) {
@@ -32,6 +31,10 @@ client.on("message", async (message) => {
                 
         }
     }
+
+
+    
+
 });
 
 client.login(config.token);

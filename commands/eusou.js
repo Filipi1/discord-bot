@@ -5,6 +5,8 @@ module.exports = async (client, msg) => {
     const numeroAleatorio = Math.floor(Math.random() * (names.length))
     const nomeSelecionado = names[numeroAleatorio]
 
+    console.log(numeroAleatorio)
+
     const menssagem = new Discord.MessageEmbed()
         .setTitle("Você é " + nomeSelecionado.nome)
         .setColor(0x5A4AA5)
@@ -19,7 +21,7 @@ module.exports = async (client, msg) => {
             return;
         }
 
-        //await msg.member.setNickname(nomeNormalizado)
+    //await msg.member.setNickname(nomeNormalizado)
     } catch (err) {
         console.log(err)
     }

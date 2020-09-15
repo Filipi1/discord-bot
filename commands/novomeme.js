@@ -17,7 +17,7 @@ module.exports = (client, msg) => {
         }
     });
 
-    msg.channel.send(msg.author.username + ", escreva o título do seu meme");
+    msg.channel.send("```" + msg.author.username + ", escreva o título do seu meme```");
 
     let collector = new Discord.MessageCollector(msg.channel, m => m.author.id === msg.author.id, { time: 10000, max: 1 });
     collector.on('collect', message => {
@@ -25,9 +25,15 @@ module.exports = (client, msg) => {
             console.log(message.content)
 
             memeCreated.nome = message.content
-            message.channel.send("Ok! O Título do seu meme será: " + message.content);
-            message.channel.send("Agora me envie o link de uma imagem para o seu meme");
+            message.channel.send(">>> Ok! O Título do seu meme será: " + message.content);
+            message.channel.send("```Agora me envie o link de uma imagem para o seu meme```");
             stepOne(message)
+        }
+    })
+
+    collector.on('end', collector => {
+        if(collector.size == 0) {
+            msg.channel.send("```Tempo expirado, por favor, recomeçe com 'p! novomeme'```")
         }
     })
 
@@ -36,10 +42,15 @@ module.exports = (client, msg) => {
             let urlCollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000, max: 1 });
             urlCollector.on('collect', message => {
                 memeCreated.url = message.content;
-                message.channel.send("Ok! A imagem do seu meme será: " + message.content);
-                message.channel.send("Por fim, envie uma descrição divertida!");
+                message.channel.send(">>>Ok! A imagem do seu meme será: " + message.content);
+                message.channel.send("```Por fim, envie uma descrição divertida!```");
                 stepThree(message)
                 urlCollector.dispose(message)
+            })
+            urlCollector.on('end', collector => {
+                if(collector.size == 0) {
+                    msg.channel.send("```Tempo expirado, por favor, recomeçe com 'p! novomeme'```")
+                }
             })
         }
     }
@@ -66,6 +77,11 @@ module.exports = (client, msg) => {
                 confirm(message)
                 descCollector.dispose(message)
             })
+            descCollector.on('end', collector => {
+                if(collector.size == 0) {
+                    msg.channel.send("Tempo expirado, por favor, recomeçe com 'p! novomeme'")
+                }
+            })
         }
     }
 
@@ -86,6 +102,11 @@ module.exports = (client, msg) => {
                     });
                 } else {
                     message.channel.send("Meme descartado!");
+                }
+            })
+            confirm.on('end', collector => {
+                if(collector.size == 0) {
+                    msg.channel.send("Tempo expirado, por favor, recomeçe com 'p! novomeme'")
                 }
             })
         }

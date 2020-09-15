@@ -6,7 +6,8 @@ const descriptions = {
     "p! ping": "Testa a velocidade de resposta do bot",
     "p! help": "Visualiza todos os comandos",
     "p! clean": "Faz uma limpeza no chat",
-    "p! eusou": "Mostra quem você é"
+    "p! eusou": "Mostra quem você é",
+    "p! novomeme": "Crie seu proprio meme para os comandos 'eusou'."
 }
 
 module.exports = async (client, msg) => {

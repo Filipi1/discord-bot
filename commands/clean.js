@@ -15,7 +15,6 @@ module.exports = async (client, msg) => {
             }
         }
     } else {
-        msg.reply(", você não possui permissão para este comando!")
+        msg.reply("você não possui permissão para este comando!")
     }
-
 }

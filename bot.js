@@ -25,16 +25,11 @@ client.on("message", async (message) => {
                 .setTitle("❌  Oops!")
                 .setDescription(`Não existe nenhum comando "${command}". \n\nDigite "s! help" para ver os comandos disponíveis.`)
                 .setColor(0xE34545)
-        
+                
                 message.reply(embed);    
             }
-                
         }
     }
-
-
-    
-
 });
 
 client.login(config.token);

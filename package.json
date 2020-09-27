@@ -9,6 +9,7 @@
   "author": "Filipe Braga",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.3.1"
+    "discord.js": "^12.3.1",
+    "snekfetch": "^4.0.4"
   }
 }

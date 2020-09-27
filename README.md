@@ -9,7 +9,7 @@ utilize a url
 
 No lugar das %%% coloque o id da sua aplicação, você consegue no site developer do discord.
 
-Depois, na config.js desse repositório, adicione a token do seu bot no lugar referente a mesma e execute um
+Depois, na config.json, adicione a token do seu bot no lugar referente a mesma e execute:
 
 > npm i
 

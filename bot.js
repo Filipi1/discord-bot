@@ -2,13 +2,15 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require('./config.json');
 
+const names = require('./extra/names.json');
+
 //discordapp.com/oauth2/authorize?=&client_id=749347709952983071&scope=bot&permissions=8
 
 const commandsReader = require("./scripts/commandsReader.js");
 const commands = commandsReader(config.prefix);
 
 client.on("ready", () => {
-    console.log(`Bot foi iniciado, com ${client.user.tag} usuários`)
+    console.log(`${client.user.tag} foi iniciado com ${names.length} memes.`)
     client.user.setActivity("s! help")
 });
 

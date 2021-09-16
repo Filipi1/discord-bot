@@ -47,12 +47,12 @@ module.exports = (client, msg) => {
             let urlCollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: expirationTime, max: 1 });
             urlCollector.on('collect', message => {
                 
-                if (message.content === '' || message.content === null)
-                    memeCreated.url = message.attachments.first().attachment
-                else
-                    memeCreated.url = message.content;
 
-                console.log(message.attachments.first().attachment)
+                if (message.content === '' || message.content === null){
+                    memeCreated.url = message.attachments.first().attachment
+                } else {
+                    memeCreated.url = message.content;
+                }
 
                 const menssagem = new Discord.MessageEmbed()
                     .setTitle("Ok! Imagem definida!")

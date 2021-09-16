@@ -9,7 +9,8 @@ const descriptions = {
     "s! eusou": "Mostra quem você é",
     "s! novomeme": "Crie seu proprio meme para os comandos 'eusou'.",
     "s! meunumero": "Te ajuda a escolher um número",
-    "s! minecraft": "Mostra o status do servidor de Minecraft SecretFriend"
+    "s! minecraft": "Mostra o status do servidor de Minecraft SecretFriend",
+    "s! tocarsom": "Toca um meme aleatório no canal de voz",
 }
 
 module.exports = async (client, msg) => {

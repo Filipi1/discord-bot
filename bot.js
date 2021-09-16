@@ -3,6 +3,8 @@ const client = new Discord.Client();
 const config = require('./config.json');
 const names = require('./extra/names.json');
 
+require('dotenv').config()
+
 //discordapp.com/oauth2/authorize?=&client_id=749347709952983071&scope=bot&permissions=8
 
 const commandsReader = require("./scripts/commandsReader.js");
@@ -33,4 +35,4 @@ client.on("message", async (message) => {
     }
 });
 
-client.login(config.token);
+client.login(process.env.TOKEN);
